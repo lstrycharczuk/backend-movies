@@ -18,7 +18,7 @@ app.use("/api", moviesRouter);
 
 app.get("/", (req, resp) => {
   resp.send(
-    "<h1>Welcome to the Movie API</h1><p>Check out our <a href='https://github.com/lstrycharczuk/backend-movies'>GitHub Repo</a>"
+    `<h1>Welcome to the Movie API</h1><p>Check out our <a href='https://github.com/lstrycharczuk/backend-movies'>GitHub Repo</a> or go to <a href="http://localhost:${port}/api/movies">API</a>`
   );
 });
 
