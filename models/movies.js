@@ -3,6 +3,12 @@ const express = require("express");
 require("dotenv").config();
 
 movieSchema = new mongoose.Schema({
+  src: {
+    type: String
+  },
+  img: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
@@ -49,7 +55,12 @@ moviesRouter.get(path, async (req, resp) => {
 
 moviesRouter.post(path, async (req, resp) => {
   const movie = new Movies({
+    src: req.body.src,
+    img: req.body.img,
     title: req.body.title,
+    description: req.body.description,
+    year: req.body.year,
+    watched: req.body.watched,
   });
   try {
     const newMovie = await movie.save();
